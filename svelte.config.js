@@ -2,6 +2,6 @@
 const preprocess = require('svelte-preprocess');
 
 module.exports = {
-    preprocess: preprocess(),
+    preprocess: preprocess({ typescript: false }),
     // ...other svelte options could go here
 };

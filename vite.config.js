@@ -1,7 +1,9 @@
 import { defineConfig, loadEnv } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
+import pages from 'vite-plugin-pages-svelte';
 import autoPreprocess from 'svelte-preprocess';
 import { resolve } from 'path'
+
 
 
 // https://vitejs.dev/config/
@@ -44,6 +46,9 @@ export default defineConfig(({ command, mode }) => {
   return {
     plugins: [svelte({
       preprocess: autoPreprocess(),
+    }), pages({
+      // Defaults to src/pages
+      pagesDir: 'src/views',
     })]
   }
 })
